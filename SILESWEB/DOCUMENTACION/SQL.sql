@@ -6,7 +6,7 @@ CREATE TABLE TL_ADM_BAUT_ClasesAutorizaciones(
     sCodAut VARCHAR (40) NOT NULL,
     sNomAut VARCHAR (40) NOT NULL,
     bRegAci BIT
-);  
+);
 
 CREATE TABLE TL_ADM_BCLC_ClaseCuentaContable(
     sClsCta	Texto VARCHAR,
@@ -612,11 +612,11 @@ CREATE TABLE TL_ADM_TTCO_TransaccionesContables(
     sCodTra VARCHAR,
     sDesTra VARCHAR
 );
- 
+
 CREATE TABLE TL_ADM_TTGC_GrupoContable(
     nId BIGINT NOT NULL,
     sCodTra VARCHAR,
-    sCodGrp VARCHAR, 
+    sCodGrp VARCHAR,
     sCtaDeb VARCHAR,
     sCtaCre VARCHAR,
     bRegAci BIT 
@@ -624,7 +624,7 @@ CREATE TABLE TL_ADM_TTGC_GrupoContable(
 
 CREATE TABLE TL_ADM_TTIA_TipoAnalisis(
     nId BIGINT NOT NULL,
-    sCodTipAna VARCHAR, 
+    sCodTipAna VARCHAR,
     sNomTipAna VARCHAR,
     bRegAci BIT
 );
@@ -680,7 +680,7 @@ CREATE TABLE TL_ADM_TZON_Zonas(
     nId BIGINT NOT NULL,
     sCodZon VARCHAR,
     sNomZon VARCHAR,
-    bRegAci BIT 
+    bRegAci BIT
 );
 
 CREATE TABLE TL_COM_ENOC_EncabezadoNotaCreditoCompras(
@@ -739,7 +739,7 @@ CREATE TABLE TL_COM_ENOD_EncabezadoNotaDebitoCompras(
     sEstDoc VARCHAR,
     sTipMov VARCHAR,
     dFecCtb DATETIME,
-    dFecDoc DATETIME, 
+    dFecDoc DATETIME,
     dFecVto DATETIME,
     dFecSys DATETIME,
     sCodTer VARCHAR,
@@ -822,4 +822,263 @@ CREATE TABLE TL_COM_EODC_EncabezadoOrdenCompra(
     bPrp01
     bPrp02
     bPrp03
+);
+CREATE TABLE TL_COM_LFAP1_DetalleFacturaProveedores(
+    nId BIGINT NOT NULL,
+    sCodDoc VARCHAR,
+    nNroDoc FLOAT,
+    sCodSer VARCHAR,
+    sTipMov VARCHAR,
+    sCodDocBas VARCHAR,
+    nNroDocBas FLOAT,
+    sCodSerBas VARCHAR,
+    sCodItm VARCHAR,
+    sNomItm VARCHAR,
+    sNomAlt VARCHAR,
+    sCodAlm VARCHAR,
+    nCanItm FLOAT,
+    sUniMedInv VARCHAR,
+    nPreUni FLOAT,
+    nVlrBas FLOAT,
+    nPorDto FLOAT,
+    nVlrDto FLOAT,
+    nPreDto FLOAT,
+    nVlrDtoLin FLOAT,
+    sCodIva VARCHAR,
+    nPorIva FLOAT,
+    nVlrIva FLOAT,
+    nVlrIvaLin FLOAT,
+    nPreBru FLOAT,
+    nTotLin FLOAT,
+    nPorCms FLOAT,
+    sCodCco VARCHAR,
+    sTipLIM VARCHAR,
+    sCodVen VARCHAR,
+    nLinBas FLOAT,
+    sCodPdo VARCHAR,
+    sCodCta VARCHAR,
+    bSolIto BIT,
+    sCtaCosVta VARCHAR,
+    bItmBlq BIT,
+    sClsDoc VARCHAR,
+    nTasCamUsd FLOAT,
+    nPreUniUsd FLOAT,
+    nVlrBasUsd FLOAT,
+    sCodRch VARCHAR,
+    sNroLot VARCHAR,
+    nSdoCanLin FLOAT,
+    nPreProm FLOAT
+);
+CREATE TABLE TL_COM_LNOC1_DetalleNotaCreditoCompras(
+    nId BIGINT NOT NULL,
+    sCodDoc VARCHAR,
+    nNroDoc FLOAT,
+    sCodSer VARCHAR,
+    sTipMov VARCHAR,
+    sCodDocBas VARCHAR,
+    nNroDocBas FLOAT,
+    sCodSerBas VARCHAR,
+    sCodItm VARCHAR,
+    sNomItm VARCHAR,
+    sNomAlt VARCHAR,
+    sCodAlm VARCHAR,
+    nCanItm FLOAT,
+    sUniMedInv VARCHAR,
+    nPreUni FLOAT,
+    nVlrBas FLOAT,
+    nPorDto FLOAT,
+    nVlrDto FLOAT,
+    nPreDto FLOAT,
+    nVlrDtoLin FLOAT,
+    sCodIva VARCHAR,
+    nPorIva FLOAT,
+    nVlrIva FLOAT,
+    nVlrIvaLin FLOAT,
+    nPreBru FLOAT,
+    nTotLin FLOAT,
+    nPorCms FLOAT,
+    sCodCco VARCHAR,
+    sTipLIM VARCHAR,
+    sCodVen VARCHAR,
+    nLinBas FLOAT,
+    sCodPdo VARCHAR,
+    sCodCta VARCHAR,
+    bSolIto BIT,
+    sCtaCosVta VARCHAR,
+    bItmBlq BIT,
+    sClsDoc VARCHAR,
+    nTasCamUsd FLOAT,
+    nPreUniUsd FLOAT,
+    nVlrBasUsd FLOAT,
+    sCodRch VARCHAR,
+    sNroLot VARCHAR,
+    nSdoCanLin FLOAT,
+    nPesProm FLOAT
+);
+CREATE TABLE TL_COM_LNOD1_DetalleNotaDebitoCompras(
+    nId BIGINT NOT NULL,
+    sCodDoc VARCHAR,
+    nNroDoc FLOAT,
+    sCodSer VARCHAR,
+    sTipMov VARCHAR,
+    sCodDocBas VARCHAR,
+    nNroDocBas FLOAT,
+    sCodSerBas VARCHAR,
+    sCodItm VARCHAR,
+    sNomItm VARCHAR,
+    sNomAlt VARCHAR,
+    sCodAlm VARCHAR,
+    nCanItm FLOAT,
+    sUniMedInv VARCHAR,
+    nPreUni FLOAT,
+    nVlrBas FLOAT,
+    nPorDto FLOAT,
+    nVlrDto FLOAT,
+    nPreDto FLOAT,
+    nVlrDtoLin FLOAT,
+    sCodIva VARCHAR,
+    nPorIva FLOAT,
+    nVlrIva FLOAT,
+    nVlrIvaLin FLOAT,
+    nPreBru FLOAT,
+    nTotLin FLOAT,
+    nPorCms FLOAT,
+    sCodCco VARCHAR,
+    sTipLIM VARCHAR,
+    sCodVen VARCHAR,
+    nLinBas FLOAT,
+    sCodPdo VARCHAR,
+    sCodCta VARCHAR,
+    bSolIto BIT,
+    sCtaCosVta VARCHAR,
+    bItmBlq BIT,
+    sClsDoc VARCHAR,
+    nTasCamUsd FLOAT,
+    nPreUniUsd FLOAT,
+    nVlrBasUsd FLOAT,
+    sCodRch VARCHAR,
+    sNroLot VARCHAR,
+    nSdoCanLin FLOAT,
+    nPreProm FLOAT
+);
+CREATE TABLE TL_COM_LODC1_DetalleOrdenCompra(
+    nId BIGINT NOT NULL,
+    nIdCEODC BIGINT,
+    sCodDoc VARCHAR,
+    nNroDoc FLOAT,
+    sCodSer VARCHAR,
+    sTipMov VARCHAR,
+    sCodDocBas VARCHAR,
+    nNroDocBas FLOAT,
+    sCodSerBas VARCHAR,
+    sCodItm VARCHAR,
+    sNomItm VARCHAR,
+    sNomAlt VARCHAR,
+    sCodAlm VARCHAR,
+    nCanItm FLOAT,
+    sUniMedInv VARCHAR,
+    nPreUni FLOAT,
+    nVlrBas FLOAT,
+    nPorDto FLOAT,
+    nVlrDto FLOAT,
+    nPreDto FLOAT,
+    nVlrDtoLin FLOAT,
+    sCodIva VARCHAR,
+    nPorIva FLOAT,
+    nVlrIva FLOAT,
+    nVlrIvaLin FLOAT,
+    nPreBru FLOAT,
+    nTotLin FLOAT,
+    nPorCms FLOAT,
+    sCodCco VARCHAR,
+    sTipLIM VARCHAR,
+    sCodVen VARCHAR,
+    nLinBas FLOAT,
+    sCodPdo VARCHAR,
+    sCodCta VARCHAR,
+    bSolIto BIT,
+    sCtaCosVta VARCHAR,
+    bItmBlq BIT,
+    sClsDoc VARCHAR,
+    nTasCamUsd FLOAT,
+    nPreUniUsd FLOAT,
+    nVlrBasUsd FLOAT,
+    sCodRch VARCHAR,
+    sNroLot VARCHAR,
+    nSdoCanLin FLOAT,
+    nPesProm FLOAT,
+    sCodMon VARCHAR
+);
+
+CREATE TABLE TL_FIN_EMOC_EncabezadoModeloContable(
+    nId BIGINT NOT NULL,
+    sCodDoc VARCHAR,
+    sCodSer VARCHAR,
+    sTipMov VARCHAR,
+    sClsDoc VARCHAR,
+    sCodDocCtb VARCHAR,
+    sCodSerCtb VARCHAR,
+    sCodTra VARCHAR
+);
+
+CREATE TABLE TL_FIN_TNPU_PlanUnicoCuentasNiif(
+    nId BIGINT NOT NULL,
+    sCodNIIF VARCHAR,
+    sNomNIIF VARCHAR,
+    sTipCta VARCHAR,
+    sNivCta VARCHAR,
+    sCodNIIFSup VARCHAR
+);
+
+CREATE TABLE TL_FIN_TNSA_NiifSaldosIniciales(
+    nId BIGINT NOT NULL,
+    sCodNIIF VARCHAR,
+    nSdoIni FLOAT,
+    nSdoAct FLOAT
+);
+
+CREATE TABLE TL_FIN_TNSA_NiifSaldosTerceros(
+    nId BIGINT NOT NULL,
+    sCodNIIF VARCHAR,
+    sCodTer VARCHAR,
+    sNitTer VARCHAR,
+    nSdoIniTer FLOAT,
+    nSdoTer FLOAT
+);
+
+CREATE TABLE TL_FIN_TPUC_PlanUnicoCuentas(
+    nId BIGINT NOT NULL,
+    sCodCta VARCHAR,
+    sNomCta VARCHAR,
+    sCodCtaAlt VARCHAR,
+    sNomAlt VARCHAR,
+    sCodNIIF VARCHAR,
+    bCtaFluCaj BIT,
+    bCtaPpo BIT,
+    sClsCta VARCHAR,
+    nSdoIniCta FLOAT,
+    nSdoFinCta FLOAT,
+    sNivCta VARCHAR,
+    sCodCtaSup VARCHAR,
+    bCtaRcc BIT,
+    sCodCtaRcc VARCHAR,
+    bCtaCfd BIT,
+    bCtaTer BIT,
+    bCtaBlq BIT,
+    bCtaMov BIT,
+    bRegAci BIT
+);
+CREATE TABLE TL_FIN_TSAC_SaldosInicialesContables(
+    nId BIGINT NOT NULL,
+    sCodCta VARCHAR,
+    nSdoIniCta FLOAT,
+    nSdoCta FLOAT,
+);
+CREATE TABLE TL_FIN_TSAC_SaldosInicialesContables(
+    nId BIGINT NOT NULL,
+    sCodCta VARCHAR,
+    sCodTer VARCHAR,
+    sNitTer VARCHAR,
+    nSdoIniTer FLOAT,
+    nSdoTer FLOAT
 );
