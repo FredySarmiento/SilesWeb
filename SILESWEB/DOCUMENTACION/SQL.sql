@@ -2,35 +2,35 @@ CREATE DATABASE SilesWeb
 USE SilesWeb
 
 CREATE TABLE TL_ADM_BAUT_ClasesAutorizaciones(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodAut VARCHAR (40) NOT NULL,
     sNomAut VARCHAR (40) NOT NULL,
     bRegAci BIT
 );
 
 CREATE TABLE TL_ADM_BCLC_ClaseCuentaContable(
-    sClsCta	Texto VARCHAR,
+    sClsCta	Texto VARCHAR ,
     sNomClsCta VARCHAR,
 );
 
 CREATE TABLE TL_ADM_BCLD_ClaseDocumento(
-    sClsDoc VARCHAR,
-    sNomClsDoc VARCHAR
+    sClsDoc VARCHAR (5),
+    sNomClsDoc VARCHAR (30)
 );
 
 CREATE TABLE TL_ADM_BEOC_EstadoOrdenCompra(
-    nId BIGINT NOT NULL,
-    sCodEstODC VARCHAR,
-    sNomEstODC  VARCHAR,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
+    sCodEstODC VARCHAR ,
+    sNomEstODC  VARCHAR (10),
     bEstSel BIT,
     bRegAci BIT,
-    nNroOrd FLOAT
+    nNroOrd FLOAT (10)
 );
 
 CREATE TABLE TL_ADM_BEOP_EstadoOrdenProduccion(
-    nId BIGINT NOT NULL,
-    sCodEstODP VARCHAR,
-    sNomEstODP VARCHAR,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
+    sCodEstODP VARCHAR ,
+    sNomEstODP VARCHAR(20),
     bEstSel BIT,
     bRegAci BIT,
     nNroOrd FLOAT,
@@ -38,14 +38,14 @@ CREATE TABLE TL_ADM_BEOP_EstadoOrdenProduccion(
 );
 
 CREATE TABLE TL_ADM_BEPC_EstadoPeriodoContable(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodEstPdoCbe VARCHAR,
-    sDesEstPdoCbe VARCHAR,
+    sDesEstPdoCbe VARCHAR ,
     bRegAci BIT
 );
 
 CREATE TABLE TL_ADM_ERR_EstadoError(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodErr VARCHAR,
     sDesErr VARCHAR,
     sCodClr VARCHAR,
@@ -54,7 +54,7 @@ CREATE TABLE TL_ADM_ERR_EstadoError(
 );
 
 CREATE TABLE TL_ADM_BESD_EstadoDocumentos(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sEstDoc VARCHAR,
     sNomEstDoc VARCHAR,
     bEsdSel BIT,
@@ -62,20 +62,20 @@ CREATE TABLE TL_ADM_BESD_EstadoDocumentos(
 );
 
 CREATE TABLE TL_ADM_FMT_FormatoFecha(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sFmtHH VARCHAR,
     sFmtFec VARCHAR
 );
 
 CREATE TABLE TL_ADM_BLIM_ListaMateriales(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodLst VARCHAR,
     sDesLst VARCHAR,
     bRegAci BIT
 );
 
 CREATE TABLE TL_ADM_BODP_TiposOrdenesProduccion(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     sDesDoc VARCHAR,
     bOdpSel BIT,
@@ -83,7 +83,7 @@ CREATE TABLE TL_ADM_BODP_TiposOrdenesProduccion(
 );
 
 CREATE TABLE TL_ADM_BROP_TiposRegistrosProduccion(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sTipMov VARCHAR,
     sNomMov VARCHAR,
     bSelxDef BIT,
@@ -91,7 +91,7 @@ CREATE TABLE TL_ADM_BROP_TiposRegistrosProduccion(
 );
 
 CREATE TABLE TL_ADM_BTGE_TipoGestion(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sTipGes VARCHAR,
     bRegAci BIT
 );
@@ -103,47 +103,47 @@ CREATE TABLE TL_ADM_BTID_TipoDocumentoCompra(
 );
 
 CREATE TABLE TL_ADM_BTIR_TipoRevalorización(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sTipRev VARCHAR,
     sNomTipRev VARCHAR,
     bRegAci BIT
 );
 
 CREATE TABLE TL_ADM_BTIT_GruposTerceros(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodGruTer VARCHAR,
     sNomGruTer VARCHAR,
     bRegAci BIT
 );
 
 CREATE TABLE TL_ADM_BTIV_TipoVenta (
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sTipVen VARCHAR,
     sNomTipVen VARCHAR,
     bRegAci BIT
 );
 
 CREATE TABLE TL_ADM_BTRT_TipoRegistro_Tiempo(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodTipRegTie VARCHAR,
     sNomTipRegTie VARCHAR,
     bRegAci BIT
 );
 
 CREATE TABLE TL_ADM_BTUS_TipoUsuarios(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sNomUsr VARCHAR,
     bRegAci BIT
 );
 
 CREATE TABLE TL_ADM_CCLR_ConfiguracionColor(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodClr VARCHAR,
     sNomClr VARCHAR
 );
 
 CREATE TABLE TL_ADM_CDEM_ConfiguracionDatosEmpresa(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sNomCia VARCHAR,
     sDirCia VARCHAR,
     sCiuCia VARCHAR,
@@ -166,7 +166,7 @@ CREATE TABLE TL_ADM_CDEM_ConfiguracionDatosEmpresa(
 );
 
 CREATE TABLE TL_ADM_CPAG_ParametrizacionesGenerales(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodCia VARCHAR,
     sCodUsr VARCHAR,
     bLmtCre BIT,
@@ -195,7 +195,7 @@ CREATE TABLE TL_ADM_CPAG_ParametrizacionesGenerales(
 );
 
 CREATE TABLE TL_ADM_CUNI_ConfiguracionUnidad(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodUni VARCHAR,
     sNomUni VARCHAR,
     sCodUniBas VARCHAR,
@@ -205,13 +205,13 @@ CREATE TABLE TL_ADM_CUNI_ConfiguracionUnidad(
 );
 
 CREATE TABLE TL_ADM_FCOT_CodigosTrasacciones(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodTra VARCHAR,
     sNomTra VARCHAR
 );
 
 CREATE TABLE TL_ADM_PDGV_ParametrizacionDataGridView(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodFrm VARCHAR,
     sCodDgv VARCHAR,
     nColOri FLOAT,
@@ -227,7 +227,7 @@ CREATE TABLE TL_ADM_PDGV_ParametrizacionDataGridView(
 );
 
 CREATE TABLE TL_ADM_PEND_EncabezadoNumeracionDocumentos(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     sCodSer VARCHAR,
     sNomDoc VARCHAR,
@@ -241,7 +241,7 @@ CREATE TABLE TL_ADM_PEND_EncabezadoNumeracionDocumentos(
 );
 
 CREATE TABLE TL_ADM_PFRM_FormulariosPrograma(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodFrm VARCHAR,
     sNomFrm VARCHAR,
     bFrmAut BIT,
@@ -249,13 +249,13 @@ CREATE TABLE TL_ADM_PFRM_FormulariosPrograma(
 );
 
 CREATE TABLE TL_ADM_PGQLst_Consultas(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodStr VARCHAR,
     sNomStr VARCHAR
 );
 
 CREATE TABLE TL_ADM_PLND1_DetalleNumeracionDocumentos(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     sCodSer VARCHAR,
     nNroIni FLOAT,
@@ -266,7 +266,7 @@ CREATE TABLE TL_ADM_PLND1_DetalleNumeracionDocumentos(
 );
 
 CREATE TABLE TL_ADM_PQDG_EstructurasDataGridViewConsultas(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodStr VARCHAR,
     nColOri FLOAT,
     nNroCol FLOAT,
@@ -280,7 +280,7 @@ CREATE TABLE TL_ADM_PQDG_EstructurasDataGridViewConsultas(
 );
 
 CREATE TABLE TL_ADM_PRDG_EstructuraReportes(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodRpt VARCHAR,
     nColOri FLOAT,
     nNroCol FLOAT,
@@ -292,7 +292,7 @@ CREATE TABLE TL_ADM_PRDG_EstructuraReportes(
 );
 
 CREATE TABLE TL_ADM_TALM_Almacenes(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodAlm VARCHAR,
     sNomAlm VARCHAR,
     sUbiAlm VARCHAR,
@@ -316,7 +316,7 @@ CREATE TABLE TL_ADM_TALM_Almacenes(
 );
 
 CREATE TABLE TL_ADM_TANA_Analisis(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodAna VARCHAR,
     sNomAna VARCHAR,
     sCodTipAna VARCHAR,
@@ -324,7 +324,7 @@ CREATE TABLE TL_ADM_TANA_Analisis(
 );
 
 CREATE TABLE TL_ADM_TANA_Analisis(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodAna VARCHAR,
     sNomAna VARCHAR,
     sCodTipAna VARCHAR,
@@ -332,7 +332,7 @@ CREATE TABLE TL_ADM_TANA_Analisis(
 );
 
 CREATE TABLE TL_ADM_TASI_SaldosInicialesAno(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     nAnoSdoIni FLOAT,
     sNomTblEnc VARCHAR,
     sNomTblDet VARCHAR,
@@ -344,32 +344,32 @@ CREATE TABLE TL_ADM_TASI_SaldosInicialesAno(
 );
 
 CREATE TABLE TL_ADM_TAUT_Autorizacion(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodUsr VARCHAR,
     sCodFrm VARCHAR,
     sCodAut VARCHAR
 );
 CREATE TABLE TL_ADM_TBCO_Bancos(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodBco VARCHAR,
     sDesBco VARCHAR
 );
 
 CREATE TABLE TL_ADM_TCCC_CriteriosCuentasContables(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCriCtaCbe VARCHAR,
     bRegAci BIT
 );
 
 CREATE TABLE TL_ADM_TCCO_CentroCostos(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodCco VARCHAR,
     sNomCco VARCHAR,
     bRegAci BIT
 );
 
 CREATE TABLE TL_ADM_TCIF_CostosIndirectosFabricacion(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodCIF VARCHAR,
     sNomCIF VARCHAR,
     sCodCtr VARCHAR,
@@ -384,14 +384,14 @@ CREATE TABLE TL_ADM_TCIF_CostosIndirectosFabricacion(
 );
 
 CREATE TABLE TL_ADM_TCLI_ClaseItems(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sClsItm VARCHAR,
     sDesItm VARCHAR,
     bRegAci BIT
 );
 
 CREATE TABLE TL_ADM_TCOP_CondicionesPago(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCndPag VARCHAR,
     sCanDia VARCHAR,
     sCodFecVto VARCHAR,
@@ -399,14 +399,14 @@ CREATE TABLE TL_ADM_TCOP_CondicionesPago(
 );
 
 CREATE TABLE TL_ADM_TCTC_CodigoTramsaccionesContables(
-    nId BIGINT NOT NULL;
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL;
     sCodTraCtb VARCHAR;
     sDesTraCtb VARCHAR;
     bRegAci BIT
 );
 
 CREATE TABLE TL_ADM_TCTR_CentrosTrabajo(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodCtr VARCHAR,
     sNomCtr VARCHAR,
     sCodCco VARCHAR,
@@ -424,7 +424,7 @@ CREATE TABLE TL_ADM_TCTR_CentrosTrabajo(
 );
 
 CREATE TABLE TL_ADM_TECO_EjercicioContable(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodEco VARCHAR,
     sDesPdo VARCHAR,
     dFecini DATETIME,
@@ -432,7 +432,7 @@ CREATE TABLE TL_ADM_TECO_EjercicioContable(
 );
 
 CREATE TABLE TL_ADM_TGRI_GruposInventarios(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodGrp VARCHAR,
     sNomGrp VARCHAR,
     sCtaInv VARCHAR,
@@ -457,14 +457,14 @@ CREATE TABLE TL_ADM_TGRI_GruposInventarios(
 );
 
 CREATE TABLE TL_ADM_TGRV_GrupoVenta(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodGrpVta VARCHAR,
     sNomGrpVta VARCHAR,
     bRegAci BIT
 );
 
 CREATE TABLE TL_ADM_TIVA_CodigosIva(
-    nId BIGINT NOT NULL;
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL;
     sCodIVA VARCHAR,
     sNomIVA VARCHAR,
     nPorIVA FLOAT,
@@ -477,7 +477,7 @@ CREATE TABLE TL_ADM_TIVA_CodigosIva(
 );
 
 CREATE TABLE TL_ADM_TMEP_MetodosPago(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodMetPag VARCHAR,
     sNomMetPag VARCHAR,
     sClsPag VARCHAR,
@@ -486,13 +486,13 @@ CREATE TABLE TL_ADM_TMEP_MetodosPago(
 );
 
 CREATE TABLE TL_ADM_TMEV_MetodosValorizacion(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sMetVlz VARCHAR,
     bRegAci BIT
 );
 
 CREATE TABLE TL_ADM_TMON_Monedas(
-    nId BIGINT NOT NULL;
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL;
     sCodMon VARCHAR,
     sNomMon VARCHAR,
     sCodIntMon VARCHAR,
@@ -500,7 +500,7 @@ CREATE TABLE TL_ADM_TMON_Monedas(
 );
 
 CREATE TABLE TL_ADM_TOPE_Operaciones(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodOpe VARCHAR,
     sNomOpe VARCHAR,
     sCodCtr VARCHAR,
@@ -510,7 +510,7 @@ CREATE TABLE TL_ADM_TOPE_Operaciones(
 );
 
 CREATE TABLE TL_ADM_TPAC_ParametrizacionContable(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodEco VARCHAR,
     sComCta1 VARCHAR, 
     sVtaCta1 VARCHAR,
@@ -519,7 +519,7 @@ CREATE TABLE TL_ADM_TPAC_ParametrizacionContable(
 );
 
 CREATE TABLE TL_ADM_TPCO_PeriodosContables(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodPdo VARCHAR,
     sNomPdo VARCHAR,
     sEstPdo VARCHAR,
@@ -530,7 +530,7 @@ CREATE TABLE TL_ADM_TPCO_PeriodosContables(
 );
 
 CREATE TABLE TL_ADM_TPOP_Operarios(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodTer VARCHAR,
     sNomTer VARCHAR,
     sTipTer VARCHAR,
@@ -594,27 +594,27 @@ CREATE TABLE TL_ADM_TSGI_SubgruposInventarios(
 );
 
 CREATE TABLE TL_ADM_TTAC_TasaCambio(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     dFecTasUsd DATETIME,
     dTasCamUsd DATETIME,
     nTasCamEur FLOAT
 );
 
 CREATE TABLE TL_ADM_TTCM_TiposComponentes(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodTipCmt VARCHAR,
     sNomTipCmt VARCHAR,
     bRegAci BIT
 );
 
 CREATE TABLE TL_ADM_TTCO_TransaccionesContables(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodTra VARCHAR,
     sDesTra VARCHAR
 );
 
 CREATE TABLE TL_ADM_TTGC_GrupoContable(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodTra VARCHAR,
     sCodGrp VARCHAR,
     sCtaDeb VARCHAR,
@@ -623,14 +623,14 @@ CREATE TABLE TL_ADM_TTGC_GrupoContable(
 );
 
 CREATE TABLE TL_ADM_TTIA_TipoAnalisis(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodTipAna VARCHAR,
     sNomTipAna VARCHAR,
     bRegAci BIT
 );
 
 CREATE TABLE TL_ADM_TTIN_TransaccionesInventarios(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodTra VARCHAR,
     sNomTra VARCHAR,
     sTipMov VARCHAR,
@@ -638,7 +638,7 @@ CREATE TABLE TL_ADM_TTIN_TransaccionesInventarios(
 );
 
 CREATE TABLE TL_ADM_TUME_UnidadesMedida(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sUniMed VARCHAR,
     sNomMed VARCHAR,
     sCodVol VARCHAR,
@@ -647,7 +647,7 @@ CREATE TABLE TL_ADM_TUME_UnidadesMedida(
 );
 
 CREATE TABLE TL_ADM_TUPE_UnidadesPeso(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sUniMed VARCHAR,
     sDesMed VARCHAR,
     nVlrMed FLOAT,
@@ -655,7 +655,7 @@ CREATE TABLE TL_ADM_TUPE_UnidadesPeso(
 );
 
 CREATE TABLE TL_ADM_TUSR_Usuario(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodUsr VARCHAR,
     sPwdUsr VARCHAR,
     sNomUsr VARCHAR,
@@ -668,7 +668,7 @@ CREATE TABLE TL_ADM_TUSR_Usuario(
 );
 
 CREATE TABLE TL_ADM_TVEN_Vendedores(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodVen VARCHAR,
     sNomVen VARCHAR,
     sCodZon VARCHAR,
@@ -677,14 +677,14 @@ CREATE TABLE TL_ADM_TVEN_Vendedores(
 );
 
 CREATE TABLE TL_ADM_TZON_Zonas(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodZon VARCHAR,
     sNomZon VARCHAR,
     bRegAci BIT
 );
 
 CREATE TABLE TL_COM_ENOC_EncabezadoNotaCreditoCompras(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -731,7 +731,7 @@ CREATE TABLE TL_COM_ENOC_EncabezadoNotaCreditoCompras(
 );
 
 CREATE TABLE TL_COM_ENOD_EncabezadoNotaDebitoCompras(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -778,7 +778,7 @@ CREATE TABLE TL_COM_ENOD_EncabezadoNotaDebitoCompras(
 );
 
 CREATE TABLE TL_COM_EODC_EncabezadoOrdenCompra(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -794,37 +794,37 @@ CREATE TABLE TL_COM_EODC_EncabezadoOrdenCompra(
     nPorDto FLOAT,
     sAlmOri VARCHAR,
     sDocRef VARCHAR,
-    nTotBas 
-    nTotDto
-    nTotGtoAdi
-    nTotIvaCom
-    nTotIvaVta
-    nVlrRdd
-    nTotDoc
-    sCodDocBas
-    nNroDocBas
-    sCndPag
-    sClsDoc
-    sTipDoc
-    sCodVen
-    sDirter
-    sCiuTer
-    sDepTer
-    sPaiTer
-    sCmn
-    sCodCteCtb
-    nNroCteCtb
-    nIdFECCT
-    sNitTer
-    sCodMon
-    sCodUsr
-    sCodAut
-    bPrp01
-    bPrp02
-    bPrp03
+    nTotBas FLOAT,
+    nTotDto FLOAT,
+    nTotGtoAdi FLOAT,
+    nTotIvaCom FLOAT,
+    nTotIvaVta FLOAT, 
+    nVlrRdd FLOAT,
+    nTotDoc FLOAT,
+    sCodDocBas VARCHAR,
+    nNroDocBas FLOAT,
+    sCndPag VARCHAR,
+    sClsDoc VARCHAR,
+    sTipDoc VARCHAR,
+    sCodVen VARCHAR,
+    sDirter VARCHAR,
+    sCiuTer VARCHAR,
+    sDepTer VARCHAR,
+    sPaiTer VARCHAR,
+    sCmn VARCHAR,
+    sCodCteCtb VARCHAR,
+    nNroCteCtb FLOAT,
+    nIdFECCT BIGINT,
+    sNitTer VARCHAR,
+    sCodMon VARCHAR,
+    sCodUsr VARCHAR,
+    sCodAut VARCHAR,
+    bPrp01 BIT,
+    bPrp02 BIT,
+    bPrp03 BIT
 );
 CREATE TABLE TL_COM_LFAP1_DetalleFacturaProveedores(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -870,7 +870,7 @@ CREATE TABLE TL_COM_LFAP1_DetalleFacturaProveedores(
     nPreProm FLOAT
 );
 CREATE TABLE TL_COM_LNOC1_DetalleNotaCreditoCompras(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY  NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -916,7 +916,7 @@ CREATE TABLE TL_COM_LNOC1_DetalleNotaCreditoCompras(
     nPesProm FLOAT
 );
 CREATE TABLE TL_COM_LNOD1_DetalleNotaDebitoCompras(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -962,7 +962,7 @@ CREATE TABLE TL_COM_LNOD1_DetalleNotaDebitoCompras(
     nPreProm FLOAT
 );
 CREATE TABLE TL_COM_LODC1_DetalleOrdenCompra(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     nIdCEODC BIGINT,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
@@ -1011,7 +1011,7 @@ CREATE TABLE TL_COM_LODC1_DetalleOrdenCompra(
 );
 
 CREATE TABLE TL_FIN_EMOC_EncabezadoModeloContable(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY  NOT NULL,
     sCodDoc VARCHAR,
     sCodSer VARCHAR,
     sTipMov VARCHAR,
@@ -1022,7 +1022,7 @@ CREATE TABLE TL_FIN_EMOC_EncabezadoModeloContable(
 );
 
 CREATE TABLE TL_FIN_TNPU_PlanUnicoCuentasNiif(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodNIIF VARCHAR,
     sNomNIIF VARCHAR,
     sTipCta VARCHAR,
@@ -1031,14 +1031,14 @@ CREATE TABLE TL_FIN_TNPU_PlanUnicoCuentasNiif(
 );
 
 CREATE TABLE TL_FIN_TNSA_NiifSaldosIniciales(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodNIIF VARCHAR,
     nSdoIni FLOAT,
     nSdoAct FLOAT
 );
 
 CREATE TABLE TL_FIN_TNSA_NiifSaldosTerceros(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodNIIF VARCHAR,
     sCodTer VARCHAR,
     sNitTer VARCHAR,
@@ -1047,7 +1047,7 @@ CREATE TABLE TL_FIN_TNSA_NiifSaldosTerceros(
 );
 
 CREATE TABLE TL_FIN_TPUC_PlanUnicoCuentas(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodCta VARCHAR,
     sNomCta VARCHAR,
     sCodCtaAlt VARCHAR,
@@ -1069,13 +1069,13 @@ CREATE TABLE TL_FIN_TPUC_PlanUnicoCuentas(
     bRegAci BIT
 );
 CREATE TABLE TL_FIN_TSAC_SaldosInicialesContables(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodCta VARCHAR,
     nSdoIniCta FLOAT,
     nSdoCta FLOAT,
 );
 CREATE TABLE TL_FIN_TSAC_SaldosInicialesTerceros(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodCta VARCHAR,
     sCodTer VARCHAR,
     sNitTer VARCHAR,
@@ -1083,7 +1083,7 @@ CREATE TABLE TL_FIN_TSAC_SaldosInicialesTerceros(
     nSdoTer FLOAT
 );
 CREATE TABLE TL_INV_EDMI_DatosMaestrosInventarios(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodItm VARCHAR,
     sCodBar VARCHAR,
     sNomItm VARCHAR,
@@ -1140,13 +1140,13 @@ CREATE TABLE TL_INV_EDMI_DatosMaestrosInventarios(
 );
 
 CREATE TABLE TL_INV_ELIP_ListaPrecios(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodLstPre VARCHAR,
     sDesLstPre VARCHAR
 );
 
 CREATE TABLE TL_INV_EMOV_EncabezadoMovimientoInventarios(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -1193,7 +1193,7 @@ CREATE TABLE TL_INV_EMOV_EncabezadoMovimientoInventarios(
     nIdATPCO FLOAT
 );
 CREATE TABLE TL_INV_EREV_EncabezadoRevalorizacionInventarios(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -1216,7 +1216,7 @@ CREATE TABLE TL_INV_EREV_EncabezadoRevalorizacionInventarios(
     sCodAut VARCHAR
 );
 CREATE TABLE TL_INV_LDMI1_DetalleItemsAlmacen(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     nIdIEDMI BIGINT,
     sCodItm VARCHAR,
     sCodAlm VARCHAR,
@@ -1248,7 +1248,7 @@ CREATE TABLE TL_INV_LDMI1_DetalleItemsAlmacen(
     nSdoFinDisAlm FLOAT
 );
 CREATE TABLE TL_INV_LDMI2_ProveedorItem(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodItm VARCHAR,
     sCodTer VARCHAR,
     sCodLstPre VARCHAR,
@@ -1261,7 +1261,7 @@ CREATE TABLE TL_INV_LLIP1_DetalleListaPrecios(
     sPreUni VARCHAR
 );
 CREATE TABLE TL_INV_LMOV1_DetalleMovimientoInventarios(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     nIdIEMOV BIGINT,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
@@ -1310,7 +1310,7 @@ CREATE TABLE TL_INV_LMOV1_DetalleMovimientoInventarios(
 );
 
 CREATE TABLE TL_INV_LREV1_DetalleRevalorizacionInventario(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -1334,7 +1334,7 @@ CREATE TABLE TL_INV_LREV1_DetalleRevalorizacionInventario(
 );
 
 CREATE TABLE TL_PRD_EFOM_ListadoFormulasMaestras(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodItm VARCHAR,
     sNomItm VARCHAR,
     nCanLotStn FLOAT,
@@ -1353,7 +1353,7 @@ CREATE TABLE TL_PRD_EFOM_ListadoFormulasMaestras(
     nPreVta FLOAT
 );
 CREATE TABLE TL_PRD_ELIM_ListadoMateriales(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodItm VARCHAR,
     sNomItm VARCHAR,
     nCanLotStn FLOAT,
@@ -1374,7 +1374,7 @@ CREATE TABLE TL_PRD_ELIM_ListadoMateriales(
     bIndCanPry BIT
 );
 CREATE TABLE TL_PRD_EODP_EncabezadoOrdenProduccion(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -1414,7 +1414,7 @@ CREATE TABLE TL_PRD_EODP_EncabezadoOrdenProduccion(
     bIndCanPry BIT
 );
 CREATE TABLE TL_PRD_ERCI_RegistroCif(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -1443,7 +1443,7 @@ CREATE TABLE TL_PRD_ERCI_RegistroCif(
     sCodUsr VARCHAR
     );
 CREATE TABLE TL_PRD_EROP_RegistroOperaciones(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -1486,7 +1486,7 @@ CREATE TABLE TL_PRD_EROP_RegistroOperaciones(
 );
 
 CREATE TABLE TL_PRD_LFOM1_DetalleComponentesFormulasMaestras(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     nIdPEFOM BIGINT,
     sCodItm VARCHAR,
     sCodCmt VARCHAR,
@@ -1502,7 +1502,7 @@ CREATE TABLE TL_PRD_LFOM1_DetalleComponentesFormulasMaestras(
 );
 
 CREATE TABLE TL_PRD_LFOM2_DetalleComponentesFormulasMaestras(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     nIdPEFOM BIGINT,
     sCodItm VARCHAR,
     nPosOpe FLOAT,
@@ -1517,7 +1517,7 @@ CREATE TABLE TL_PRD_LFOM2_DetalleComponentesFormulasMaestras(
 );
 
 CREATE TABLE TL_PRD_LFOM3_DetalleCostosIndirectosFabricacionFormulasMaestras(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     nIdPEFOM BIGINT,
     sCodItm VARCHAR,
     sCodCIF VARCHAR,
@@ -1528,7 +1528,7 @@ CREATE TABLE TL_PRD_LFOM3_DetalleCostosIndirectosFabricacionFormulasMaestras(
 );
 
 CREATE TABLE TL_PRD_LFOM5_DetalleAnalisis(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     nIdPEFOM BIGINT,
     sCodItm VARCHAR,
     sCodAna VARCHAR,
@@ -1538,7 +1538,7 @@ CREATE TABLE TL_PRD_LFOM5_DetalleAnalisis(
 );
 
 CREATE TABLE TL_PRD_LLIM1_DetalleListadoFormulaMaestra(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     nIdPELIM BIGINT,
     sCodItm VARCHAR,
     sCodCmt VARCHAR,
@@ -1554,7 +1554,7 @@ CREATE TABLE TL_PRD_LLIM1_DetalleListadoFormulaMaestra(
 );
 
 CREATE TABLE TL_PRD_LLIM2_DetalleListadoMateriales(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     nIdPELIM BIGINT,
     sCodItm VARCHAR,
     nPosOpe FLOAT,
@@ -1569,7 +1569,7 @@ CREATE TABLE TL_PRD_LLIM2_DetalleListadoMateriales(
 );
 
 CREATE TABLE TL_PRD_LLIM3_DetalleListadoMaterialesOperaciones(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     nIdPELIM BIGINT,
     sCodItm VARCHAR,
     sCodCIF VARCHAR,
@@ -1580,7 +1580,7 @@ CREATE TABLE TL_PRD_LLIM3_DetalleListadoMaterialesOperaciones(
 );
 
 CREATE TABLE TL_PRD_LLIM4_DetalleListadoMaterialesCIF(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     nIdPELIM BIGINT,
     sCodItm VARCHAR,
     sCodCmt VARCHAR,
@@ -1596,7 +1596,7 @@ CREATE TABLE TL_PRD_LLIM4_DetalleListadoMaterialesCIF(
 );
 
 CREATE TABLE TL_PRD_LODP1_DetalleOrdenProduccion(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     nIdPEODP BIGINT,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
@@ -1619,7 +1619,7 @@ CREATE TABLE TL_PRD_LODP1_DetalleOrdenProduccion(
 );
 
 CREATE TABLE TL_PRD_LODP2_DetalleOrdenOperacion(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     nIdPEODP BIGINT,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
@@ -1640,7 +1640,7 @@ CREATE TABLE TL_PRD_LODP2_DetalleOrdenOperacion(
 );
 
 CREATE TABLE TL_PRD_LODP3_DetalleCIF(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     nIdPEODP BIGINT,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
@@ -1659,7 +1659,7 @@ CREATE TABLE TL_PRD_LODP3_DetalleCIF(
     nVlrVrcCIF FLOAT
 );
 CREATE TABLE TL_PRD_LODP4_ResumenOP(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     nIdPEODP BIGINT,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
@@ -1698,7 +1698,7 @@ CREATE TABLE TL_PRD_LODP4_ResumenOP(
     nPorIto FLOAT,
 );
 CREATE TABLE TL_PRD_LODP5_DetalleAnalisis(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     nIdPEODP BIGINT,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
@@ -1709,7 +1709,7 @@ CREATE TABLE TL_PRD_LODP5_DetalleAnalisis(
     sCodTipAna VARCHAR
 );
 CREATE TABLE TL_PRD_LRCI1_DetalleRegistroCIF(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -1742,7 +1742,7 @@ CREATE TABLE TL_PRD_LRCI1_DetalleRegistroCIF(
 );
 
 CREATE TABLE TL_PRD_LROP1_DetalleRegistroOperacionesProduccion(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     nIdPEROP BIGINT,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
@@ -1794,7 +1794,7 @@ CREATE TABLE TL_PRD_LROP1_DetalleRegistroOperacionesProduccion(
 );
 
 CREATE TABLE TL_TER_EDMT_DatosMaestrosTerceros(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodTer VARCHAR,
     sNomTer VARCHAR,
     sTipTer VARCHAR,
@@ -1820,7 +1820,7 @@ CREATE TABLE TL_TER_EDMT_DatosMaestrosTerceros(
     sCmn VARCHAR,
 );
 CREATE TABLE TL_TER_LDMT1_DireccionTerceros(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodTer VARCHAR,
     sDirTer VARCHAR,
     sCiuTer VARCHAR,
@@ -1829,19 +1829,19 @@ CREATE TABLE TL_TER_LDMT1_DireccionTerceros(
     bDirDfl BIT
 );
 CREATE TABLE TL_TER_LDMT2_RetefuenteTerceros(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodTer VARCHAR,
     sCodRet VARCHAR,
     bAct BIT
 );
 CREATE TABLE TL_TER_LDMT3_IvaTerceros(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodTer VARCHAR,
     sCodIVA VARCHAR,
     bAct BIT
 );
 CREATE TABLE TL_TER_LDMT4_DatosMediosManeticos(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodTer VARCHAR,
     sMMTipDoc VARCHAR,
     sMMNomTer VARCHAR,
@@ -1858,7 +1858,7 @@ CREATE TABLE TL_TER_LDMT4_DatosMediosManeticos(
     sMMCodAcvAlt VARCHAR
 );
 CREATE TABLE TL_VEN_EFAC_EncabezadoFacturaClientes(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -1904,7 +1904,7 @@ CREATE TABLE TL_VEN_EFAC_EncabezadoFacturaClientes(
     bPrp03 BIT
 );
 CREATE TABLE TL_VEN_ENOC_EncabezadoNotaCreditoClientes(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -1950,7 +1950,7 @@ CREATE TABLE TL_VEN_ENOC_EncabezadoNotaCreditoClientes(
     bPrp03 BIT
 );
 CREATE TABLE TL_VEN_ENOD_EncabezadoNotaDebitoClientes(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -1996,7 +1996,7 @@ CREATE TABLE TL_VEN_ENOD_EncabezadoNotaDebitoClientes(
     bPrp03 BIT
 );
 CREATE TABLE TL_VEN_EPED_EncabezadoPedidos(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -2042,7 +2042,7 @@ CREATE TABLE TL_VEN_EPED_EncabezadoPedidos(
     bPrp03 BIT
 );
 CREATE TABLE TL_VEN_LFAC1_DetalleFacturaClientes(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -2088,7 +2088,7 @@ CREATE TABLE TL_VEN_LFAC1_DetalleFacturaClientes(
     nPesProm FLOAT
 );
 CREATE TABLE TL_VEN_LNOC1_DetalleNotasCreditoClientes(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -2134,7 +2134,7 @@ CREATE TABLE TL_VEN_LNOC1_DetalleNotasCreditoClientes(
     nPesProm FLOAT
 );
  CREATE TABLE TL_VEN_LNOD1_DetalleNotasDebitoClientes(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -2180,7 +2180,7 @@ CREATE TABLE TL_VEN_LNOC1_DetalleNotasCreditoClientes(
     nPesProm FLOAT
  );
 CREATE TABLE TL_VEN_LPED1_DetallePedidosClientes(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodDoc VARCHAR,
     nNroDoc FLOAT,
     sCodSer VARCHAR,
@@ -2226,29 +2226,29 @@ CREATE TABLE TL_VEN_LPED1_DetallePedidosClientes(
     nPesProm FLOAT
 );
 CREATE TABLE TL_MMG_TCAE_CodigoActividadEconomica(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodAce VARCHAR,
     sNomAce VARCHAR
 );
 
 CREATE TABLE TL_MMG_TCIU_Ciudades(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sMMCodDep VARCHAR,
     sMMCodCiu VARCHAR,
     sMMNomCiu VARCHAR
 );
 CREATE TABLE TL_MMG_TDEP_Departamentos(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sMMCodDep VARCHAR,
     sMMNomDep VARCHAR
 );
 CREATE TABLE TL_MMG_TPAI_Paises(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sMMCodPai VARCHAR,
     sMMNomPai VARCHAR
 );
 CREATE TABLE TL_MMG_TTID_TipoDocumento(
-    nId BIGINT NOT NULL,
+    nId BIGINT IDENTITY (1, 1)  PRIMARY KEY NOT NULL,
     sCodTipDoc VARCHAR,
     sNomDoc VARCHAR
 );
